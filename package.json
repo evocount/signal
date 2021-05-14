@@ -1,0 +1,35 @@
+{
+	"name": "@evocount/signal",
+	"version": "0.0.0",
+	"description": "A signal to manage asynchronous tasks using coroutines.",
+	"main": "build/index.js",
+	"scripts": {
+		"start": "npm run build:development -- --watch",
+		"build": "npm run build:production",
+		"build:development": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" npx webpack --config webpack/development.ts",
+		"build:production": "npm run clean && cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" npx webpack --config webpack/production.ts",
+		"clean": "rm -rf build",
+		"test": "npm run test:lint",
+		"test:lint": "npx eslint src/**/*.tsx",
+		"prepack": "npm run build:production",
+		"analyze": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" npx webpack --config webpack/analyze.ts"
+	},
+	"keywords": [
+		"async",
+		"signal"
+	],
+	"author": "EvoCount GmbH",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^15.0.3",
+		"@types/webpack": "^5.28.0",
+		"@types/webpack-bundle-analyzer": "^4.4.0",
+		"cross-env": "^7.0.3",
+		"ts-loader": "^9.1.2",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.2.4",
+		"webpack": "^5.37.0",
+		"webpack-bundle-analyzer": "^4.4.1",
+		"webpack-cli": "^4.7.0"
+	}
+}
