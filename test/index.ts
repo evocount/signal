@@ -45,7 +45,7 @@ describe("signal", () => {
 		await signal.timeout(10)
 		const end = Date.now()
 
-		assert.isAbove(end, start + 9)
+		assert.isAbove(end, start + 5)
 	})
 
 	it("timeout by cancel", async () => {
@@ -56,7 +56,7 @@ describe("signal", () => {
 		await signal.timeout(10)
 		const end = Date.now()
 
-		assert.isAbove(end, start + 4)
-		assert.isBelow(end, start + 6)
+		assert.isAbove(end, start)
+		assert.isBelow(end, start)
 	})
 })
