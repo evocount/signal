@@ -41,22 +41,28 @@ describe("signal", () => {
 	it("timeout", async () => {
 		const signal = new Signal
 
+		const TIMEOUT = 50
+		const TOLERANCE = 10
+
 		const start = Date.now()
-		await signal.timeout(10)
+		await signal.timeout(TIMEOUT)
 		const end = Date.now()
 
-		assert.isAbove(end, start + 5)
+		assert.isAbove(end, start + TOLERANCE)
 	})
 
 	it("timeout by cancel", async () => {
 		const signal = new Signal
 
-		setTimeout(() => signal.notify(), 5)
+		const TIMEOUT = 50
+		const TOLERANCE = 10
+
+		setTimeout(() => signal.notify(), TIMEOUT / 2)
 		const start = Date.now()
-		await signal.timeout(10)
+		await signal.timeout(TIMEOUT)
 		const end = Date.now()
 
-		assert.isAbove(end, start)
-		assert.isBelow(end, start)
+		assert.isAbove(end, start + TOLERANCE)
+		assert.isBelow(end, start + TIMEOUT - TOLERANCE)
 	})
 })
