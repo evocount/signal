@@ -16,3 +16,9 @@ steps:
     image: node
     commands:
       - npm run build:production
+
+  - name: publish
+    image: plugins/npm
+    settings:
+      username: arwed
+      token: npm_token
