@@ -12,7 +12,7 @@ npm i --save @evocount/signal
 
 A signal lets you wait at a certain position of your code until the notify method is called.
 
-```{javascript}
+```js
 import Signal from "@evocount/signal"
 
 (async () => {
@@ -29,7 +29,7 @@ import Signal from "@evocount/signal"
 This can be used to send a cancel signal to a running loop.
 
 E.g. Let a loop run for 1s.
-```{javascript}
+```js
 import Signal from "@evocount/signal"
 
 (async () => {
