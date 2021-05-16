@@ -12,7 +12,7 @@
 		"clean": "rm -rf build",
 		"test": "npm run test:lint && npm run test:unit",
 		"test:lint": "npx eslint src/**/*.ts test/**/*.ts",
-		"test:unit": "npx mocha --require ts-node/register test/**/*.ts",
+		"test:unit": "npx mocha --require ts-node/register --extension ts",
 		"prepack": "npm run build:production",
 		"analyze": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" npx webpack --config webpack/analyze.ts"
 	},
@@ -23,12 +23,14 @@
 	"author": "EvoCount GmbH",
 	"license": "MIT",
 	"devDependencies": {
+		"@types/chai": "^4.2.18",
 		"@types/mocha": "^8.2.2",
 		"@types/node": "^15.0.3",
 		"@types/webpack": "^5.28.0",
 		"@types/webpack-bundle-analyzer": "^4.4.0",
 		"@typescript-eslint/eslint-plugin": "^4.23.0",
 		"@typescript-eslint/parser": "^4.23.0",
+		"chai": "^4.3.4",
 		"cross-env": "^7.0.3",
 		"eslint": "^7.26.0",
 		"mocha": "^8.4.0",
