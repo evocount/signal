@@ -1,5 +1,7 @@
 # Signal
 
+[![Build Status](https://cloud.drone.io/api/badges/evocount/signal/status.svg)](https://cloud.drone.io/evocount/signal)
+
 A small library to manage asynchronous tasks using coroutines.
 
 ## Usage
