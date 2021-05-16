@@ -19,11 +19,6 @@ steps:
 
   - name: publish
     image: plugins/npm
-    when:
-      branch:
-        - master
-      event:
-        - tag
     settings:
       username: arwed
       password:
