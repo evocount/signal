@@ -32,7 +32,7 @@ export default class Signal {
 	/**
 	 * Repeat a function until a signal is send.
 	 */
-	async repeat(f: (cancel: Signal) => Promise<void>): Promise<void> {
+	async repeat(f: (cancel: Signal) => Promise<void>, timeout = 0): Promise<void> {
 		let cancelled = false
 
 		this.chain(async () => {
@@ -40,8 +40,9 @@ export default class Signal {
 		})
 
 		while(!cancelled) {
+			const timeout_p = this.timeout(timeout)
 			await f(this)
-			await this.timeout(0)
+			await timeout_p
 		}
 	}
 
@@ -60,6 +61,7 @@ export default class Signal {
 			this.chain(async () => {
 				if(!finished) {
 					clearTimeout(timeout)
+					resolve()
 				}
 			})
 		})

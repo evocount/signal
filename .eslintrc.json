@@ -7,7 +7,6 @@
 	},
 	"extends": [
 		"eslint:recommended",
-		"plugin:react/recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended"
 	],
@@ -19,16 +18,9 @@
 		"sourceType": "module"
 	},
 	"plugins": [
-		"react",
-		"@typescript-eslint"
+		"@typescript-eslint/eslint-plugin"
 	],
 	"rules": {
-		"indent": [ "error", "tab" ],
-		"react/display-name": "off"
-	},
-	"settings": {
-		"react": {
-			"version": "detect"
-		}
+		"indent": [ "error", "tab" ]
 	}
 }
