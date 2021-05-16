@@ -19,12 +19,13 @@ steps:
 
   - name: publish
     image: plugins/npm
-    trigger:
-      event:
-        - tag
+    when:
       branch:
         - master
+      event:
+        - tag
     settings:
       username: arwed
-      token: npm_token
+      password:
+        from_secret: npm_token
       email: arwed.mett@googlemail.com
