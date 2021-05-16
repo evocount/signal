@@ -22,7 +22,7 @@ steps:
     settings:
       username:
         from_secret: npm_username
-      password:
+      token:
         from_secret: npm_token
       email:
         from_secret: npm_email
