@@ -20,7 +20,9 @@ steps:
   - name: publish
     image: plugins/npm
     settings:
-      username: arwed
+      username:
+        from_secret: npm_username
       password:
         from_secret: npm_token
-      email: arwed.mett@googlemail.com
+      email:
+        from_secret: npm_email
