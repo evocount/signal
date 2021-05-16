@@ -1,0 +1,18 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: install
+    image: node
+    commands:
+      - npm i
+
+  - name: test
+    image: node
+    commands:
+      - npm test
+
+  - name: build
+    image: node
+    commands:
+      - npm run build:production
