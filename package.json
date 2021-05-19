@@ -1,6 +1,6 @@
 {
 	"name": "@evocount/signal",
-	"version": "0.0.7",
+	"version": "0.1.0",
 	"description": "A signal to manage asynchronous tasks using coroutines.",
 	"main": "build/index.js",
 	"repository": "git@github.com:evocount/signal.git",
