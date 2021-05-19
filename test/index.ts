@@ -1,4 +1,4 @@
-import Signal from "../src"
+import { Signal } from "../src"
 import { assert } from "chai"
 
 describe("signal", () => {
